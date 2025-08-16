@@ -1,0 +1,37 @@
+// Name: Barkha Kumari
+// PRN: 24070123029
+// EnTC A1
+
+#include <iostream>
+using namespace std;
+
+void reverseCharArray(char (&str)[100]) {
+    int length = 0;
+    while (str[length] != '\0') { 
+        length++;
+    }
+
+    for (int i = 0; i < length / 2; i++) {
+        char temp = str[i];
+        str[i] = str[length - i - 1];
+        str[length - i - 1] = temp;
+    }
+}
+
+int main() {
+    char text[100];
+    cout << "Enter a string: ";
+    cin.getline(text, 100);
+
+    reverseCharArray(text); 
+
+    cout << "Reversed string: " << text << endl;
+
+    return 0;
+}
+
+/* OUTPUT
+
+Enter a string: Hello World!
+Reversed string: !dlroW olleH
+*/
