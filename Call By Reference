@@ -1,0 +1,43 @@
+// Name: Barkha Kumari
+// PRN: 24070123029
+// EnTC A1
+
+#include <iostream>
+using namespace std;
+
+void swap(int *x, int *y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main()
+{
+    int a = 10;
+    int b = 20;
+
+    cout << "\nBefore Swap:";
+    cout << "\na = " << a;
+    cout << "\nb = " << b;
+
+    swap(&a, &b);
+
+    cout << "\n\nAfter Swap:";
+    cout << "\na = " << a;
+    cout << "\nb = " << b;
+
+    return 0;
+}
+
+/* OUTPUT
+
+
+a=10
+b=20
+
+After Swap 
+
+a=20
+b=10
+*/
