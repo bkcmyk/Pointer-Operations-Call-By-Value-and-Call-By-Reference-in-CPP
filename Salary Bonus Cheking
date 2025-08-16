@@ -1,0 +1,73 @@
+// Name: Barkha Kumari
+// PRN: 24070123029
+// EnTC A1
+
+#include <iostream>
+using namespace std;
+
+int bonus(int salary) 
+{       
+    salary = salary + static_cast<int>(0.2 * salary); 
+    return salary;
+}
+
+int main() {
+    int years_completed;
+    cout << "Welcome! Let's check your bonus eligibility.\n";
+
+    cout << "How many full years have you worked here? ";
+    cin >> years_completed;
+
+    bool project;
+    cout << "Have you completed any research projects? (Yes=1, No=0): ";
+    cin >> project;
+
+    bool new_project;
+    cout << "Have you started any new projects? (Yes=1, No=0): ";
+    cin >> new_project;
+
+    int profit;
+    cout << "Approximate profit contributed due to your projects (in INR): ";
+    cin >> profit;
+
+    int count = 0;
+    if (years_completed >= 1) count++;
+    if (project)              count++;
+    if (new_project)          count++;
+    if (profit >= 100000)     count++;
+
+    if (count >= 3) {
+        int salary;
+        cout << "\nGreat work! You qualify for a 20% bonus.\n";
+        cout << "Please enter your current salary (INR): ";
+        cin >> salary;
+
+        salary = bonus(salary); 
+        cout << "Salary Increased! Congratulations!!\n";
+        cout << "New Salary = " << salary << "\n";
+    } else {
+        cout << "\nThank you for your contributions.\n";
+        cout << "You are close—meet " << (3 - count) 
+             << " more criterion";
+        if ((3 - count) != 1) cout << "s";
+        cout << " (for example, complete/start a project or cross 100,000 INR profit)\n";
+        cout << "and you will qualify for the 20% bonus next cycle. Keep going!\n";
+    }
+
+    return 0;
+}
+
+/* OUTPUT
+
+Welcome! Let's check your bonus eligibility.
+How many full years have you worked here? 
+2
+Have you completed any research projects? (Yes=1, No=0): 1
+Have you started any new projects? (Yes=1, No=0): 1
+Approximate profit contributed due to your projects (in INR): 12035
+
+Great work! You qualify for a 20% bonus.
+Please enter your current salary (INR): 5000
+Salary Increased! Congratulations!!
+New Salary = 6000
+*/
